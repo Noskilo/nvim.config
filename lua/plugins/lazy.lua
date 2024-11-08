@@ -182,6 +182,25 @@ require("lazy").setup({
 							})
 						end,
 
+						ts_ls = function()
+							require('lspconfig').ts_ls.setup({
+								commands = {
+									OrganizeImports = {
+										function()
+											vim.lsp.buf.execute_command(
+												{
+													command =
+													"_typescript.organizeImports",
+													arguments = { vim.api.nvim_buf_get_name(0) },
+													title = "",
+												})
+										end,
+										description = "Organize Imports",
+									}
+								}
+							})
+						end,
+
 						angularls = function()
 							require('lspconfig').angularls.setup({
 								root_dir = require('lspconfig/util').root_pattern(

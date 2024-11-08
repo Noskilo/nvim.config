@@ -20,3 +20,6 @@ vim.keymap.set("n", "<leader>fmd", vim.lsp.buf.format)
 
 -- auto-session
 vim.keymap.set("n", "<leader>ls", require("auto-session.session-lens").search_session, { noremap = true })
+
+-- tyescript
+vim.keymap.set("n", "<leader>to", ":OrganizeImports<cr>")
